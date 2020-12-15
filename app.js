@@ -21,9 +21,7 @@ const indexRouteController = require('./routes/indexRoute');
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
 
-mongoose.connect(mongoUri, { useNewUrlParser: true, auto_reconnect: true });
-mongoose.set("useFindAndModify", false);
-mongoose.set("useCreateIndex", true);
+mongoose.connect(mongoUri, { useNewUrlParser: true, auto_reconnect: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true });
 
 app.use(express.static(path.join(__dirname, "public")));
 
