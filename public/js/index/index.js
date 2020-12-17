@@ -22,7 +22,6 @@ window.onload = () => {
     if (allContent.scrollTop >= 70) {
       allHeader.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.1)";
       allHeaderOuterWrapper.style.backgroundColor = "rgb(248, 248, 248)";
-      console.log(`rgba(217, 230, 245, ${calculateColorPercentage(allContent.scrollTop-70, window.innerHeight)})`);
       allHeader.style.backgroundColor = `rgba(217, 230, 245, ${calculateColorPercentage(allContent.scrollTop, window.innerHeight)})`;
     } else {
       allHeaderOuterWrapper.style.backgroundColor = "transparent";
