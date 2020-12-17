@@ -1,2 +1,172 @@
 extends ./../partials/head
 block content
+  .all-wrapper
+    .all-header-outer-wrapper
+      .all-header
+        a.all-header-logo-wrapper(href="/")
+          //- span.all-header-logo-left Code
+          //- span.all-header-logo-right Fest
+          img.all-header-logo(src="/res/images/logo.png" alt="codefest")
+        .all-header-buttons-wrapper
+          span.all-header-button Hakkımızda
+          span.all-header-button Ödüller
+          span.all-header-contact-button Bize Ulaşın
+    .all-content
+      .all-content-inner-wrapper
+        .start-page-wrapper
+          .start-page-left-wrapper
+            .start-page-title-wrapper
+              span.start-page-title CodeFest'21
+              span.start-page-online online
+            span.start-page-date 3-4 Nisan, 2020
+            .start-page-subtitle Türkiye'nin ilk ve en büyük liseler arası kodlama etkinliği CodeFest, bu yıl da liselilerin yanında yer almaya devam ediyor
+            .start-page-button
+              span Keşfet
+          .start-page-right-wrapper
+        .aboutus-page-wrapper
+          .aboutus-images-wrapper
+            .aboutus-top-images
+              .aboutus-image-wrapper.aboutus-image-wrapper-one
+                img.aboutus-image(src="/res/images/aboutus1.jpg" alt="codefest")
+              .aboutus-image-wrapper.aboutus-image-wrapper-two
+                img.aboutus-image(src="/res/images/aboutus2.jpg" alt="codefest")
+            .aboutus-bottom-images
+              .aboutus-image-wrapper.aboutus-image-wrapper-three
+                img.aboutus-image(src="/res/images/aboutus3.jpg" alt="codefest")
+          .aboutus-text-wrapper
+            span.aboutus-title Hakkımızda
+            span.aboutus-text CodeFest 2016 yılından beri Üsküdar Amerikan Lisesi öğrencileri tarafından düzenlenmekte. İki gün olan etkinlikte çalıştaylar ve yarışmalar yapılıyor, katılımcılar bir yandan kendilerini geliştirirken bir yandan da çeşitli ödüller kazanmak için yarışma imkanına sahip oluyor. CodeFest soruları, dünyadaki diğer bilgisayar olimpiyatlarına benzer formatta hazırlanıyor ve böylece uluslararası alanda ülkemizi temsil edecek öğrencilerimize de kendilerini deneme imkanı veriyor. Tüm Türkiye'den yüzlerce kişiyi ağırlayan CodeFest, bu sene online olarak düzenlenecek.
+        .line-wrapper
+          .line(style="margin-left: auto;")
+          .circle
+        .format-page-wrapper
+          .format-inner-wrapper
+            .format-top-wrapper
+              .format-left-wrapper
+                span.format-inner-title Birinci Gün
+                span.format-subtitle
+                  i.fas.fa-arrow-right(style="margin-right: 10px")
+                  span Çalıştaylar
+                span.format-text Her sene farklı üniversitelerden hocalar tarafından verilen çalıştaylarımız katılımcılarımızdan büyük ilgi görüyor. Çalıştaylarımızda Bioinformatics'den Computational Geometry'e kadar bir çok farlı alan ele alınıyor.
+                span.format-subtitle
+                  i.fas.fa-arrow-right(style="margin-right: 10px")
+                  span Ek Yarışma
+                span.format-text İkinci gün düzenlenen ana yarışmaya ek olarak ilk gün bir yan yarışma yapılıyor. Bu yarışma AI gibi farklı araçların kullanımına odaklanarak yarışmacılarımıza yeni bir perspektif katıyor.
+              .format-images-wrapper
+                .format-left-image-wrapper
+                  img.format-image(src="/res/images/first3.jpg" alt="codefest")
+                .format-right-image-wrapper
+                  .format-top-image-wrapper
+                    img.format-image(src="/res/images/first1.jpg" alt="codefest")
+                  .format-bottom-image-wrapper
+                    img.format-image(src="/res/images/first2.jpg" alt="codefest")
+            .line-wrapper(style="padding: 0px")
+              .circle
+              .line
+            .format-bottom-wrapper
+              .format-images-wrapper-bottom
+                .format-right-image-wrapper(style="margin-left: 0px; margin-right: 20px")
+                  .format-top-image-wrapper
+                    img.format-image(src="/res/images/second1.jpg" alt="codefest")
+                  .format-bottom-image-wrapper
+                    img.format-image(src="/res/images/second2.jpg" alt="codefest")
+                .format-left-image-wrapper(style="margin-left: 20px; margin-right: 0px")
+                  img.format-image(src="/res/images/second3.jpg" alt="codefest")
+              .format-right-wrapper
+                span.format-inner-title İkinci Gün
+                span.format-subtitle
+                  span Ana Yarışma
+                  i.fas.fa-arrow-left(style="margin-left: 10px")
+                span.format-text Ana yarışma her sene 8-10 sorudan oluşuyor ve uluslararası bilgisayar olimpiyatları esas alınarak hazırlanıyor. Codefest, ana yarışmasındaki soru kalitesi ile de uluslararası standartlara ulaşmış durumda.
+                span.format-subtitle
+                  span Yarışmacı Etkinlikleri
+                  i.fas.fa-arrow-left(style="margin-left: 10px")
+                span.format-text Her yıl yarışmacılarımızı eğlendirmek adına çeşitli etkinlikler ve eğlenceler düzenleniyor, katılımcılar diğer liseli kodlamacılarla tanışma imkanı buluyor.
+        .line-wrapper
+          .line(style="margin-left: auto;")
+          .circle
+        .awards-page-wrapper
+          .awards-left-wrapper
+            span.awards-title Ödüller
+            span.awards-text Codefest her sene binlerce lira değerinde ödül veriyor. Ödüllerimiz sponsorlarımız tarafından karşılanıyor. Ayrıca ilk üçe giremeseler de başarılı olan katılımcılarımızın tişört ve benzeri hediyeler kazanma şansı var.
+          .awards-right-wrapper
+            .award-wrapper
+              span.award-name 3 adet iPad 
+              .second-award-wrapper
+                i.fas.fa-medal
+            .award-wrapper
+              span.award-name 3 adet MacBook Air
+              .first-award-wrapper
+                i.fas.fa-trophy 
+            .award-wrapper
+              span.award-name 3 adet E-Reader
+              .third-award-wrapper
+                i.fas.fa-award
+        .line-wrapper
+          .circle
+          .line
+        .growth-content-wrapper
+          .growth-content-inner-wrapper
+            .each-growth-line(style="margin-bottom: 80px;")
+              .each-growth-wrapper
+                .each-growth-title
+                  i.fas.fa-users
+                  span 600+
+                span.each-growth-text Yarışmacı
+              .each-growth-wrapper
+                .each-growth-title
+                  i.fas.fa-laptop-code
+                  span 40+
+                span.each-growth-text Çalıştay
+            .each-growth-line
+              .each-growth-wrapper
+                .each-growth-title
+                  i.fas.fa-tasks
+                  span 30+
+                span.each-growth-text Ekip Üyesi
+              .each-growth-wrapper
+                .each-growth-title
+                  i.fas.fa-code
+                  span 45+
+                span.each-growth-text Soru
+          .growth-text-wrapper
+            span.growth-title Rakamlarla CodeFest
+            span.growth-text CodeFest 2016'dan beri her sene büyümeye devam ediyor. 30'dan fazla ekip üyesine sahip CodeFest, şimdiye kadar 600'ün üstünde yarışmacı ağırladı ve 40 küsür çalıştay düzenledi. Bu sırada CodeFest'in soru sayısı da her geçen gün artmakta: CodeFest'in bir sonraki amacı bir ilki başararak Türkçe yazılmış bir soru bankasına sahip olmak.
+        .form-page-wrapper
+          .form-left-wrapper
+            span.form-title Bize Ulaşın
+            span.form-subtitle CodeFest'e sponsor olmak, bir çalıştay düzenlemek ya da herhangi bir sorunuz için, bize ulaşın.
+          .form-right-wrapper
+            .each-input-line
+              input.each-input#name-input(type="text" placeholder="Adınız" autocomplete="none" style="margin-right: 15px")
+              input.each-input#surname-input(type="text" placeholder="Soyadınız" autocomplete="none" style="margin-left: 15px")
+            .each-input-line
+              input.each-input#email-input(type="text" placeholder="E-Posta Adresi" autocomplete="none" style="margin-right: 15px")
+              input.each-input#company-name-input(type="text" placeholder="Telefon Numarası" autocomplete="none" style="margin-left: 15px")
+            textarea.each-input#details-input(type="text" rows="5" placeholder="Detay (Opsiyonel)" autocomplete="none")
+            .form-send-line
+              .form-send-button
+                span Gönder
+              span.form-error-message#general-error-span Bir hata oluştu, lütfen daha sonra tekrar deneyin.
+              span.form-error-message#already-registered-error-span Bu e-posta adresi ile zaten bir kayıt alınmış.
+              span.form-error-message#missing-information-error-span Lütfen gerekli tüm bilgileri doldurun.
+              span.form-error-message#finished-span Kaydınız alındı, ekibimiz en kısa zamanda size ulaşacak. Teşekkürler.
+        .footer-wrapper
+          .footer-top-wrapper
+            .each-footer-wrapper
+              span.each-footer-title Hakkında
+              a.each-footer-text(href="/agreement/privacy") Sponsorluk Dosyası
+              a.each-footer-text(href="/agreement/user") Çıkmış Sorular
+            .each-footer-wrapper
+              span.each-footer-title Bize Ulaşın
+              span.each-footer-text email:
+              span.each-footer-text codefest@my.uaa.k12.tr
+              span.each-footer-text twitter:
+              span.each-footer-text codefest@my.uaa.k12.tr
+              span.each-footer-text instagram:
+              span.each-footer-text codefesttr
+          .footer-bottom-wrapper
+            a.footer-logo-wrapper(href="/")
+              span.footer-logo CodeFest
+            .copyright-wrapper
+              span Copyright 2020 - Yunus Gürlek

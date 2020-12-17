@@ -3,7 +3,7 @@ html(lang="tr")
   head
     meta(name="viewport", content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1.0, user-scalable=0")
     meta(name="description" content="Codefest: Türkiye\'nin ilk ve en büyük liseler arası kodlama etkinliği. 2016 yılından beri düzenlenmekte olan Codefest, her sene Türkiye\'nin her yanından yüzlerce gence ulaşıyor, onları programlama ile buluşturuyor. Eğer siz de sponsor olarak veya bir çalıştay düzenleyerek Codefest ekibine destek olmak isterseniz hemen bize ulaşın!")
-    title Codefest | #{title}
+    title CodeFest | #{title}
     if includes && includes.external
       if includes.external.indexOf('fontawesome') > -1
         link(rel="stylesheet",
@@ -14,7 +14,6 @@ html(lang="tr")
         script(src=`/js/${page}.js`)
       if includes.external.indexOf('css') > -1 
         link(rel="stylesheet", href=`/css/${page}.css`)
-    link(href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700,800,900" rel="stylesheet")
-    link(rel="stylesheet", href=`/css/general.css`)
+    link(href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet")
   body
     block content
