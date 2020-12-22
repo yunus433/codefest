@@ -14,7 +14,7 @@ const server = http.createServer(app);
 dotenv.config({ path: path.join(__dirname, ".env") });
 
 const PORT = process.env.PORT || 3000;
-const mongoUri = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/sellingplatform";
+const mongoUri = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/codefest";
 
 const indexRouteController = require('./routes/indexRoute');
 
