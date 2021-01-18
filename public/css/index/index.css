@@ -65,8 +65,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  height: 70px;
   top: 0px;
   background-color: transparent;
   border: none;
@@ -110,6 +108,13 @@ body {
 }
 .all-header-button:hover, .all-header-contact-button:hover {
   text-decoration: underline;
+}
+.all-header-buttons-wrapper-responsive {
+  display: none;
+  align-items: center;
+}
+.all-header-buttons-wrapper-responsive i:hover {
+  text-decoration: none !important;
 }
 
 .all-content {
@@ -515,6 +520,7 @@ body {
   margin-bottom: 30px;
   display: flex;
   justify-content: flex-end;
+  text-align: right;
 }
 .growth-text {
   color: rgb(30, 30, 30);
@@ -660,4 +666,60 @@ body {
   font-weight: 300;
   font-size: 85%;
   margin-top: 10px;
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 300px) {
+  
+}
+
+@media only screen and (max-width: 700px) and (min-width: 300px) {
+  .all-header-buttons-wrapper {
+    display: none;
+  }
+  .all-header-buttons-wrapper-responsive {
+    display: flex;
+  }
+} 
+
+@media only screen and (max-width: 700px) and (min-width: 500px) {
+  .all-header {
+    padding: 0 50px;
+  }
+  .start-page-wrapper {
+    padding: 0px 50px;
+  }
+  .aboutus-page-wrapper {
+    padding: 80px 50px;
+    padding-top: 160px;
+  }
+  .format-page-wrapper, .awards-page-wrapper, .growth-content-wrapper  {
+    padding: 80px 50px;
+  }
+  .form-page-wrapper {
+    padding: 100px 50px;
+  }
+  .footer-wrapper {
+    padding: 60px 50px;
+  }
+}
+@media only screen and (max-width: 500px) and (min-width: 300px) {
+  .all-header {
+    padding: 0 30px;
+  }
+  .start-page-wrapper {
+    padding: 0px 30px;
+  }
+  .aboutus-page-wrapper {
+    padding: 80px 30px;
+    padding-top: 160px;
+  }
+  .format-page-wrapper, .awards-page-wrapper, .growth-content-wrapper  {
+    padding: 80px 30px;
+  }
+  .form-page-wrapper {
+    padding: 100px 30px;
+  }
+  .footer-wrapper {
+    padding: 60px 30px;
+  }
 }

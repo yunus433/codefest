@@ -2,9 +2,6 @@ const moment = require('moment-timezone');
 const mongoose = require('mongoose');
 const validator = require('validator');
 
-const createApplication = require('./functions/createApplication');
-const deleteApplication = require('./functions/deleteApplication');
-
 const Schema = mongoose.Schema;
 
 const ApplicationSchema = new Schema({
