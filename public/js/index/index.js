@@ -10,13 +10,12 @@ const smoothScroll = (scrollAmount, contentWrapper) => {
 }
 
 const calculateColorPercentage = (scrollAmount, maxScrollAmount) => {
-  return Math.max(0, 1.0 - (parseInt(Math.round(scrollAmount / maxScrollAmount * 100)) / 100.0));
+  return Math.min(1, (parseInt(Math.round(scrollAmount / maxScrollAmount * 100)) / 100.0));
 }
 
 window.onload = () => {
-  const allHeaderOuterWrapper = document.querySelector('.all-header-outer-wrapper');
-  const allHeader = document.querySelector('.all-header');
-  const allContent = document.querySelector('.all-content');
+  const allHeader = document.querySelector('.all-header-wrapper');
+  const allContent = document.querySelector('.all-content-wrapper');
 
   const nameInput = document.getElementById('name-input');
   const surnameInput = document.getElementById('surname-input');
@@ -31,13 +30,9 @@ window.onload = () => {
 
   allContent.onscroll = () => {
     if (allContent.scrollTop >= 70) {
-      allHeader.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.1)";
-      allHeaderOuterWrapper.style.backgroundColor = "rgb(248, 248, 248)";
-      allHeader.style.backgroundColor = `rgba(217, 230, 245, ${calculateColorPercentage(allContent.scrollTop, window.innerHeight)})`;
+      allHeader.style.backgroundColor = `rgba(0, 0, 20, ${calculateColorPercentage(allContent.scrollTop, window.innerHeight)})`;
     } else {
-      allHeaderOuterWrapper.style.backgroundColor = "transparent";
-      allHeader.style.boxShadow = "none";
-      allHeader.style.backgroundColor = "transparent";
+      allHeader.style.backgroundColor = 'transparent';
     }
   }
 
@@ -55,17 +50,17 @@ window.onload = () => {
       document.querySelector('.form-page-wrapper').scrollIntoView(false);
 
     if (event.target.classList.contains('form-send-button') || event.target.parentNode.classList.contains('form-send-button')) {
-      generalErrorSpan.style.display = "none";
-      alreadyRegisteredErrorSpan.style.display = "none";
-      missingInformationErrorSpan.style.display = "none";
-      finishedSpan.style.display = "none";
+      generalErrorSpan.style.display = 'none';
+      alreadyRegisteredErrorSpan.style.display = 'none';
+      missingInformationErrorSpan.style.display = 'none';
+      finishedSpan.style.display = 'none';
 
       if (!nameInput.value || !nameInput.value.length || !surnameInput.value || !surnameInput.value.length || !emailInput.value || !emailInput.value.length)
-        return missingInformationErrorSpan.style.display = "block";
+        return missingInformationErrorSpan.style.display = 'block';
       
       const xhr = new XMLHttpRequest();
-      xhr.open("POST", '/');
-      xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+      xhr.open('POST', '/');
+      xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
 
       xhr.send(JSON.stringify({
         name: nameInput.value,
@@ -78,13 +73,13 @@ window.onload = () => {
       xhr.onreadystatechange = () => {
         if (xhr.readyState == XMLHttpRequest.DONE) {
           if (xhr.status == 200) 
-            return finishedSpan.style.display = "block"
+            return finishedSpan.style.display = 'block'
           else if (xhr.status == 400)
-            return missingInformationErrorSpan.style.display = "block";
+            return missingInformationErrorSpan.style.display = 'block';
           else if (xhr.status == 500)
-            return alreadyRegisteredErrorSpan.style.display = "block";
+            return alreadyRegisteredErrorSpan.style.display = 'block';
           else
-            return generalErrorSpan.style.display = "block";
+            return generalErrorSpan.style.display = 'block';
         }
       }
     }

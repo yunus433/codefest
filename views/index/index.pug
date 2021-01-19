@@ -1,174 +1,271 @@
 extends ./../partials/head
 block content
+  .background-wrapper
+    img(src="/res/images/dashboard_image.png" alt="codefest")
   .all-wrapper
     .all-header-outer-wrapper
-      .all-header
-        a.all-header-logo-wrapper(href="/")
-          img.all-header-logo(src="/res/images/logo.png" alt="codefest")
+      .all-header-wrapper
+        .all-header-logo-wrapper
+          img(src="/res/images/header_logo.png" alt="codefest")
         .all-header-buttons-wrapper
-          span.all-header-button.all-header-aboutus-button Hakkımızda
-          span.all-header-button.all-header-awards-button Ödüller
-          span.all-header-contact-button Bize Ulaşın
-        .all-header-buttons-wrapper-responsive
-          i.fas.fa-question.all-header-button.all-header-aboutus-button
-          i.fas.fa-trophy.all-header-button.all-header-awards-button
-          i.fas.fa-phone.all-header-contact-button
-    .all-content
-      .all-content-inner-wrapper
-        .start-page-wrapper
-          .start-page-left-wrapper
-            .start-page-title-wrapper
-              span.start-page-title CodeFest'21
-              span.start-page-online online
-            span.start-page-date 3-4 Nisan, 2020
-            .start-page-subtitle Türkiye'nin ilk ve en büyük liseler arası kodlama etkinliği CodeFest, bu yıl da liselilerin yanında yer almaya devam ediyor
-            .start-page-button
-              span Keşfet
-          .start-page-right-wrapper
-        .aboutus-page-wrapper
-          .aboutus-images-wrapper
-            .aboutus-top-images
-              .aboutus-image-wrapper.aboutus-image-wrapper-one
-                img.aboutus-image(src="/res/images/aboutus1.png" alt="codefest")
-              .aboutus-image-wrapper.aboutus-image-wrapper-two
-                img.aboutus-image(src="/res/images/aboutus2.png" alt="codefest")
-            .aboutus-bottom-images
-              .aboutus-image-wrapper.aboutus-image-wrapper-three
-                img.aboutus-image(src="/res/images/aboutus3.png" alt="codefest")
-          .aboutus-text-wrapper
-            span.aboutus-title Hakkımızda
-            span.aboutus-text CodeFest 2016 yılından beri Üsküdar Amerikan Lisesi öğrencileri tarafından düzenlenmekte. İki gün olan etkinlikte çalıştaylar ve yarışmalar yapılıyor, katılımcılar bir yandan kendilerini geliştirirken bir yandan da çeşitli ödüller kazanmak için yarışma imkanına sahip oluyor. CodeFest soruları, dünyadaki diğer bilgisayar olimpiyatlarına benzer formatta hazırlanıyor ve böylece uluslararası alanda ülkemizi temsil edecek öğrencilerimize de kendilerini deneme imkanı veriyor. Tüm Türkiye'den yüzlerce kişiyi ağırlayan CodeFest, bu sene online olarak düzenlenecek.
-        .line-wrapper
-          .line(style="margin-left: auto;")
-          .circle
-        .format-page-wrapper
-          .format-inner-wrapper
-            .format-top-wrapper
-              .format-left-wrapper
-                span.format-inner-title Birinci Gün
-                span.format-subtitle
-                  i.fas.fa-arrow-right(style="margin-right: 10px")
-                  span Çalıştaylar
-                span.format-text Her sene farklı üniversitelerden hocalar tarafından verilen çalıştaylarımız katılımcılarımızdan büyük ilgi görüyor. Çalıştaylarımızda Bioinformatics'den Computational Geometry'e kadar bir çok farlı alan ele alınıyor.
-                span.format-subtitle
-                  i.fas.fa-arrow-right(style="margin-right: 10px")
-                  span Ek Yarışma
-                span.format-text İkinci gün düzenlenen ana yarışmaya ek olarak ilk gün bir yan yarışma yapılıyor. Bu yarışma AI gibi farklı araçların kullanımına odaklanarak yarışmacılarımıza yeni bir perspektif katıyor.
-              .format-images-wrapper
-                .format-left-image-wrapper
-                  img.format-image(src="/res/images/first3.png" alt="codefest")
-                .format-right-image-wrapper
-                  .format-top-image-wrapper
-                    img.format-image(src="/res/images/first1.png" alt="codefest")
-                  .format-bottom-image-wrapper
-                    img.format-image(src="/res/images/first2.png" alt="codefest")
-            .line-wrapper(style="padding: 0px")
-              .circle
-              .line
-            .format-bottom-wrapper
-              .format-images-wrapper-bottom
-                .format-right-image-wrapper(style="margin-left: 0px; margin-right: 20px")
-                  .format-top-image-wrapper
-                    img.format-image(src="/res/images/second1.png" alt="codefest")
-                  .format-bottom-image-wrapper
-                    img.format-image(src="/res/images/second2.png" alt="codefest")
-                .format-left-image-wrapper(style="margin-left: 20px; margin-right: 0px")
-                  img.format-image(src="/res/images/second3.png" alt="codefest")
-              .format-right-wrapper
-                span.format-inner-title İkinci Gün
-                span.format-subtitle
-                  span Ana Yarışma
-                  i.fas.fa-arrow-left(style="margin-left: 10px")
-                span.format-text Ana yarışma her sene 8-10 sorudan oluşuyor ve uluslararası bilgisayar olimpiyatları esas alınarak hazırlanıyor. Codefest, ana yarışmasındaki soru kalitesi ile de uluslararası standartlara ulaşmış durumda.
-                span.format-subtitle
-                  span Yarışmacı Etkinlikleri
-                  i.fas.fa-arrow-left(style="margin-left: 10px")
-                span.format-text Her yıl yarışmacılarımızı eğlendirmek adına çeşitli etkinlikler ve eğlenceler düzenleniyor, katılımcılar diğer liseli kodlamacılarla tanışma imkanı buluyor.
-        .line-wrapper
-          .line(style="margin-left: auto;")
-          .circle
-        .awards-page-wrapper
-          .awards-left-wrapper
-            span.awards-title Ödüller
-            span.awards-text Codefest her sene binlerce lira değerinde ödül veriyor. Ödüllerimiz sponsorlarımız tarafından karşılanıyor. Ayrıca ilk üçe giremeseler de başarılı olan katılımcılarımızın tişört ve benzeri hediyeler kazanma şansı var.
-          .awards-right-wrapper
-            .award-wrapper
-              span.award-name 3 adet iPad 
-              .second-award-wrapper
-                i.fas.fa-medal
-            .award-wrapper
-              span.award-name 3 adet MacBook Air
-              .first-award-wrapper
-                i.fas.fa-trophy 
-            .award-wrapper
-              span.award-name 3 adet E-Reader
-              .third-award-wrapper
-                i.fas.fa-award
-        .line-wrapper
-          .circle
-          .line
-        .growth-content-wrapper
-          .growth-content-inner-wrapper
-            .each-growth-line(style="margin-bottom: 80px;")
-              .each-growth-wrapper
-                .each-growth-title
-                  i.fas.fa-users
-                  span 600+
-                span.each-growth-text Yarışmacı
-              .each-growth-wrapper
-                .each-growth-title
-                  i.fas.fa-laptop-code
-                  span 40+
-                span.each-growth-text Çalıştay
-            .each-growth-line
-              .each-growth-wrapper
-                .each-growth-title
-                  i.fas.fa-tasks
-                  span 30+
-                span.each-growth-text Ekip Üyesi
-              .each-growth-wrapper
-                .each-growth-title
-                  i.fas.fa-code
-                  span 45+
-                span.each-growth-text Soru
-          .growth-text-wrapper
-            span.growth-title Rakamlarla CodeFest
-            span.growth-text CodeFest 2016'dan beri her sene büyümeye devam ediyor. 30'dan fazla ekip üyesine sahip CodeFest, şimdiye kadar 600'ün üstünde yarışmacı ağırladı ve 40 küsür çalıştay düzenledi. Bu sırada CodeFest'in soru sayısı da her geçen gün artmakta: CodeFest'in bir sonraki amacı bir ilki başararak Türkçe yazılmış bir soru bankasına sahip olmak.
-        .form-page-wrapper
-          .form-left-wrapper
-            span.form-title Bize Ulaşın
-            span.form-subtitle CodeFest'e sponsor olmak, bir çalıştay düzenlemek ya da herhangi bir sorunuz için, bize ulaşın.
-          .form-right-wrapper
-            .each-input-line
-              input.each-input#name-input(type="text" placeholder="Adınız" autocomplete="none" style="margin-right: 15px")
-              input.each-input#surname-input(type="text" placeholder="Soyadınız" autocomplete="none" style="margin-left: 15px")
-            .each-input-line
-              input.each-input#email-input(type="text" placeholder="E-Posta Adresi" autocomplete="none" style="margin-right: 15px")
-              input.each-input#phone-input(type="text" placeholder="Telefon Numarası" autocomplete="none" style="margin-left: 15px")
-            textarea.each-input#details-input(type="text" rows="5" placeholder="Detay (Opsiyonel)" autocomplete="none")
-            .form-send-line
-              .form-send-button
-                span Gönder
-              span.form-error-message#general-error-span Bir hata oluştu, lütfen daha sonra tekrar deneyin.
-              span.form-error-message#already-registered-error-span Bu e-posta adresi ile zaten bir kayıt alınmış.
-              span.form-error-message#missing-information-error-span Lütfen gerekli tüm bilgileri doldurun.
-              span.form-error-message#finished-span Kaydınız alındı, ekibimiz en kısa zamanda size ulaşacak. Teşekkürler.
-        .footer-wrapper
-          .footer-top-wrapper
-            .each-footer-wrapper
-              span.each-footer-title Hakkında
-              a.each-footer-text(href="/agreement/privacy") Sponsorluk Dosyası
-              a.each-footer-text(href="/agreement/user") Çıkmış Sorular
-            .each-footer-wrapper
-              span.each-footer-title Bize Ulaşın
-              span.each-footer-text email:
-              span.each-footer-text codefest@my.uaa.k12.tr
-              span.each-footer-text twitter:
-              span.each-footer-text codefest@my.uaa.k12.tr
-              span.each-footer-text instagram:
-              span.each-footer-text @codefesttr
-          .footer-bottom-wrapper
-            a.footer-logo-wrapper(href="/")
-              span.footer-logo CodeFest
-            .copyright-wrapper
-              span Copyright 2020 - Yunus Gürlek
+          span.each-all-header-button.each-all-header-button-selected.main-page-button Ana Sayfa
+          span.each-all-header-button.current-codefest-button CodeFest'21
+          span.each-all-header-button.old-events-button Geçmiş Etkinlikler
+          span.each-all-header-button.images-button Galeri
+          span.each-all-header-button.contact-button İletişim
+    .all-content-wrapper
+      .start-page-wrapper
+        span.start-page-title CodeFest'21
+          span.start-page-title-online online
+        .start-page-subtitle-wrapper
+          .start-page-line
+          span.start-page-subtitle Geldim, Gördüm, Kodladım.
+        .start-page-date-wrapper
+          .start-page-left-date
+            span Nisan 3-4
+          .start-page-right-date
+            span ONLINE
+      .about-us-page-wrapper
+        .about-us-left-wrapper
+          img(src="/res/images/aboutus.png" alt="codefest about us")
+        .about-us-right-wrapper
+          .about-us-right-inner-wrapper
+            span.about-us-title
+              span H
+              span A
+              span K
+              span K
+              span I
+              span M
+              span I
+              span Z
+              span D
+              span A
+            .about-us-border-bottom
+              - for (let i = 0; i < 200; i++)
+                .each-about-us-border-point
+            span.about-us-text CodeFest 2016 yılından beri Üsküdar Amerikan Lisesi öğrencileri tarafından düzenlenmekte. İki gün olan etkinlikte çalıştaylar ve yarışmalar yapılıyor, katılımcılar bir yandan kendilerini geliştirirken bir yandan da çeşitli ödüller kazanmak için yarışma imkanına sahip oluyor. CodeFest soruları, dünyadaki diğer bilgisayar olimpiyatlarına benzer formatta hazırlanıyor ve böylece uluslararası alanda ülkemizi temsil edecek öğrencilerimize de kendilerini deneme imkanı veriyor. Tüm Türkiye'den yüzlerce kişiyi ağırlayan CodeFest, bu sene online olarak düzenlenecek.
+      .info-outer-wrapper
+        .goals-wrapper
+          i.fas.fa-bullseye.goals-icon
+          span.goals-title Hedeflerimiz
+          .goals-each-text-wrapper
+            .goals-each-text-point
+            span.goals-each-text Lise öğrencileri arasında bilgisayar biliminin, programlamanın bilinirliğini arttırmak ve geleceğin dünyasını şekillendirecek bu alanın önemini vurgulamak.
+          .goals-each-text-wrapper
+            .goals-each-text-point
+            span.goals-each-text Algoritma ve programlamayla ilgilenen farklı okullarda okuyan lise öğrencileri arasında bir iletişim ağı oluşturmak.
+          .goals-each-text-wrapper
+            .goals-each-text-point
+            span.goals-each-text Saygın üniversitelerden davet edeceğimiz uzmanların yaptıracağı çalıştaylar ile öğrencilerin bilgisayar bilimi alanındaki becerilerini geliştirmek.
+          .goals-each-text-wrapper
+            .goals-each-text-point
+            span.goals-each-text Bilgisayar bilimine ve programlamaya ilgi duyan insanların, her yıl bir araya gelip güzel vakit geçireceği birbirlerinden bir şeyler öğreneceği bir gelenek yaratmak.
+        .numbers-wrapper
+          .numbers-inner-wrapper
+            .numbers-each-wrapper
+              i.fas.fa-users
+              span.numbers-title 600+
+              span.numbers-subtitle Katılımcı
+            .numbers-each-border
+            .numbers-each-wrapper
+              i.fas.fa-tasks
+              span.numbers-title 30+
+              span.numbers-subtitle Ekip Üyesi
+            .numbers-each-border
+            .numbers-each-wrapper
+              i.fas.fa-laptop-code
+              span.numbers-title 40+
+              span.numbers-subtitle Çalıştay
+            .numbers-each-border
+            .numbers-each-wrapper
+              i.fas.fa-code
+              span.numbers-title 45+
+              span.numbers-subtitle Soru
+      .form-page-wrapper
+        .form-left-wrapper
+          span.form-title CodeFest 2021
+          .form-border
+          span.form-subtitle Bu yıl altıncısı düzenlenecek olan liselerarası ilk ve tek kodlama etkinliği olan CodeFest, 3-4 Nisan 2021  tarihleri arasında çevrimiçi olarak gerçekleştirilecek. Geçen senelerde olduğu gibi bu sene de ilk gün çalıştaylar ve ek yarışma, ikinci gün ise ana yarışma olacak.
+          span.form-subtitle Gelişmelerden haberdar olmak için İletişim Formu'nun doldurmayı unutmayın!
+        .form-right-wrapper
+          .each-input-line
+            input.each-input#name-input(type="text" placeholder="Adınız" autocomplete="none" style="margin-right: 15px")
+            input.each-input#surname-input(type="text" placeholder="Soyadınız" autocomplete="none" style="margin-left: 15px")
+          .each-input-line
+            input.each-input#email-input(type="text" placeholder="E-Posta Adresi" autocomplete="none" style="margin-right: 15px")
+            input.each-input#phone-input(type="text" placeholder="Telefon Numarası" autocomplete="none" style="margin-left: 15px")
+          textarea.each-input#details-input(type="text" rows="5" placeholder="Detay (Opsiyonel)" autocomplete="none")
+          .form-send-line
+            .form-send-button
+              span Gönder
+            span.form-error-message#general-error-span Bir hata oluştu, lütfen daha sonra tekrar deneyin.
+            span.form-error-message#already-registered-error-span Bu e-posta adresi ile zaten bir kayıt alınmış.
+            span.form-error-message#missing-information-error-span Lütfen gerekli tüm bilgileri doldurun.
+            span.form-error-message#finished-span Kaydınız alındı, ekibimiz en kısa zamanda size ulaşacak. Teşekkürler.
+      //- .workshops-wrapper
+        .workshops-title-wrapper
+          span.workshops-title Çalıştaylar
+          span.workshops-subtitle Şu anda kesinleşmiş çalıştaylar aşağıda verilmiştir. İlerleyen süreçte çalıştaylarımız artacaktır.
+        .each-workshop-line
+          .each-workshop-wrapper
+            .workshop-image-wrapper
+              img(src="/res/images/workshop1.png" alt="codefest çalıştaylar")
+            .workshop-info-wrapper
+              span.workshop-title Tolga Can
+              span.workshop-subtitle Computational Geometry Çalıştayı
+              a.workshop-link(href="https://avesis.metu.edu.tr/tcan" target="_blank") Hakkında
+          .each-workshop-wrapper
+            .workshop-image-wrapper
+              img(src="/res/images/workshop2.png" alt="codefest çalıştaylar")
+            .workshop-info-wrapper
+              span.workshop-title Erchan Aptoula
+              span.workshop-subtitle Görüntü İşleme Çalıştayı
+              a.workshop-link(href="https://www.gtu.edu.tr/personel/1040/160603/erchan-aptoula.aspx" target="_blank") Hakkında
+      .old-events-wrapper
+        span.old-events-title Geçmiş Etkinlikler
+        .each-event-wrapper
+          .each-event-title-wrapper
+            span.each-event-title CF'19
+            span.each-event-date 23-24 Şubat 2019
+          .each-event-content
+            .each-event-left-wrapper
+              span.event-text Çalıştaylar:
+              .each-event-text-wrapper
+                .event-text-point
+                span.event-text Uzay Çetin - Data Science & Social Media Analysis Çalıştayı
+              .each-event-text-wrapper
+                .event-text-point
+                span.event-text Hilal Çakır - Data Structures Çalıştayı
+              .each-event-text-wrapper
+                .event-text-point
+                span.event-text Ahmet Soran - Blockchain Çalıştayı
+              .each-event-text-wrapper
+                .event-text-point
+                span.event-text Hasan Dağ - Data Mining Çalıştayı
+              .each-event-text-wrapper
+                .event-text-point
+                span.event-text Yiğit Yıldırım - AI with Tensorflow Çalıştayı
+              .each-event-text-wrapper
+                .event-text-point
+                span.event-text Meryem Boğa - Project Cycle Management Çalıştayı
+              .each-event-text-wrapper
+                .event-text-point
+                span.event-text Tolga Can - Computational Geometry Çalıştayı
+              .each-event-text-wrapper
+                .event-text-point
+                span.event-text Metin Muradoğlu - Computational Physics Çalıştayı
+              .each-event-text-wrapper
+                .event-text-point
+                span.event-text Mehmet Özdemir - Machine Learning Çalıştayı
+              .each-event-text-wrapper
+                .event-text-point
+                span.event-text Yunus Aydın - Entscheidungsproblem, Siyanur ve Timsahlar: Bilgisayar Biliminin Magazinsel Bir Tarihi Çalıştayı
+              span.event-text Ek Yarışma Süresi: 4 saat
+              span.event-text Yarışma Süresi: 7 saat
+              span.event-text Ödüller:
+              span.event-text 1. takım üyelerine Apple Macbook Air
+              span.event-text 2. takım üyelerine iPad
+              span.event-text 3. takım üyelerine Kobo E-Reader
+            .each-event-right-wrapper
+              span.event-text Çıkmış Sorular:
+              a.event-link(href="/res/documents/2019.pdf" target="_blank")
+                span 2019 Yarışma Soruları (PDF)
+              a.event-link(href="https://www.hackerrank.com/e9dnwikewe3" target="_blank")
+                span 2019 Yarışma Soruları (Hackerrank)
+              iframe.event-video(frameborder="0" allowfullscreen src="https://youtube.com/embed/3GAubfJELyQ" width="400" height="300")
+        .each-event-wrapper
+          .each-event-title-wrapper
+            span.each-event-title CF'18
+            span.each-event-date 31 Mart - 1 Nisan 2018
+          .each-event-content
+            .each-event-left-wrapper
+              span.event-text Çalıştaylar:
+              .each-event-text-wrapper
+                .event-text-point
+                span.event-text Mustafa Altınkayak - Network Security Çalıştayı
+              .each-event-text-wrapper
+                .event-text-point
+                span.event-text Serpil Sayın - Data Mining Çalıştayı
+              .each-event-text-wrapper
+                .event-text-point
+                span.event-text Tolga Can - Biyoinformatik Çalıştayı
+              .each-event-text-wrapper
+                .event-text-point
+                span.event-text Metin Muratoğlu - Bioinformatics Çalıştayı
+              .each-event-text-wrapper
+                .event-text-point
+                span.event-text Hilal Toros - Yol Bulma Algoritmaları Çalıştayı
+              .each-event-text-wrapper
+                .event-text-point
+                span.event-text Uzay Çetin - Yapay Zeka Çalıştayı
+              span.event-text Ek Yarışma Süresi: 4 saat
+              span.event-text Yarışma Süresi: 7 saat
+              span.event-text Ödüller:
+              span.event-text 1. takım üyelerine Apple Macbook Air
+              span.event-text 2. takım üyelerine iPad
+              span.event-text 3. takım üyelerine Kobo E-Reader
+            .each-event-right-wrapper
+              span.event-text Çıkmış Sorular:
+              a.event-link(href="/res/documents/2018.pdf" target="_blank")
+                span 2018 Yarışma Soruları (PDF)
+              a.event-link(href="https://www.hackerrank.com/akaakeeo" target="_blank")
+                span 2018 Yarışma Soruları (Hackerrank)
+              iframe.event-video(src="https://www.youtube.com/embed/O6rh0W79EoQ" allowfullscreen width="400" height="300")
+        .each-event-wrapper
+          .each-event-title-wrapper
+            span.each-event-title CF'17
+            span.each-event-date 18 Mart 2017
+          .each-event-content
+            .each-event-left-wrapper
+              span.event-text Çalıştaylar:
+              .each-event-text-wrapper
+                .event-text-point
+                span.event-text Arzucan Özgür - Metin İşleme Çalıştayı
+              .each-event-text-wrapper
+                .event-text-point
+                span.event-text Evren Samur - Robotik Çalıştayı
+              .each-event-text-wrapper
+                .event-text-point
+                span.event-text Barış Aktemur - Eş Zamanlı Programlama Çalıştayı
+              .each-event-text-wrapper
+                .event-text-point
+                span.event-text Yunus Aydın - Lambda Kalkülüs Çalıştayı
+              span.event-text Yarışma Süresi: 5 saat
+              span.event-text Ödüller:
+              span.event-text 1. takım üyelerine Apple Macbook Air
+              span.event-text 2. takım üyelerine Google Chromebook
+              span.event-text 3. takım üyelerine Raspberry Pi 3 Media Center Kiti
+            .each-event-right-wrapper
+              span.event-text Çıkmış Sorular:
+              a.event-link(href="/res/documents/2017.pdf" target="_blank")
+                span 2017 Yarışma Soruları (PDF)
+              a.event-link(href="https://www.hackerrank.com/01189998819991197253" target="_blank")
+                span 2017 Yarışma Soruları (Hackerrank)
+              iframe.event-video(frameborder="0" allowfullscreen src="https://www.youtube.com/embed/vvRF0K3DbAE" width="400" height="300")
+        .each-event-wrapper
+          .each-event-title-wrapper
+            span.each-event-title CF'16
+            span.each-event-date 14-15 Mayıs 2016
+          .each-event-content
+            .each-event-left-wrapper
+              span.event-text 13 liseden 100’ü aşkın katılımcı ile birincisi düzenlenen CodeFest, senelerdir süregelen bir geleneği başlatmıştır.
+              span.event-text Çalıştaylar:
+              .each-event-text-wrapper
+                .event-text-point
+                span.event-text Pınar Yolum - Yapay Zeka ve Veri Madenciliği Çalıştayı
+              .each-event-text-wrapper
+                .event-text-point
+                span.event-text Erkay Savaş - Kriptografi Çalıştayı
+              span.event-text Yarışma Süresi: 10 saat
+              span.event-text Ödüller:
+              span.event-text 1. takım üyelerine Boğaziçi Üniversitesi’nde iki haftalık ücretsiz yaz kampı fırsatı
+              span.event-text 2. takım üyelerine Raspberry Pi 3
+              span.event-text 3. takım üyelerine Arduino kiti
+            .each-event-right-wrapper
+              span.event-text Çıkmış Sorular:
+              a.event-link(href="/res/documents/2016.pdf" target="_blank")
+                span 2016 Yarışma Soruları (PDF)
+              a.event-link(href="https://www.hackerrank.com/codefest-2016" target="_blank")
+                span 2016 Yarışma Soruları (Hackerrank)
+                 
