@@ -9,10 +9,16 @@ block content
           img(src="/res/images/header_logo.png" alt="codefest")
         .all-header-buttons-wrapper
           span.each-all-header-button.each-all-header-button-selected.main-page-button Ana Sayfa
+          span.each-all-header-button.about-us-page-button Hakkında
           span.each-all-header-button.current-codefest-button CodeFest'21
           span.each-all-header-button.old-events-button Geçmiş Etkinlikler
           span.each-all-header-button.images-button Galeri
-          span.each-all-header-button.contact-button İletişim
+        .all-header-responsive-buttons-wrapper
+          i.each-all-header-button.each-all-header-button-selected.main-page-button.fas.fa-home
+          i.each-all-header-button.about-us-page-button.fas.fa-info-circle
+          i.each-all-header-button.current-codefest-button CF'21
+          i.each-all-header-button.old-events-button.fas.fa-clock
+          i.each-all-header-button.images-button.fas.fa-images
     .all-content-wrapper
       .start-page-wrapper
         span.start-page-title CodeFest'21
@@ -173,7 +179,7 @@ block content
                 span 2019 Yarışma Soruları (PDF)
               a.event-link(href="https://www.hackerrank.com/e9dnwikewe3" target="_blank")
                 span 2019 Yarışma Soruları (Hackerrank)
-              iframe.event-video(frameborder="0" allowfullscreen src="https://youtube.com/embed/3GAubfJELyQ" width="400" height="300")
+              iframe.event-video(frameborder="0" allowfullscreen src="https://www.youtube.com/embed/3GAubfJELyQ" width="400" height="300")
         .each-event-wrapper
           .each-event-title-wrapper
             span.each-event-title CF'18
@@ -211,7 +217,7 @@ block content
                 span 2018 Yarışma Soruları (PDF)
               a.event-link(href="https://www.hackerrank.com/akaakeeo" target="_blank")
                 span 2018 Yarışma Soruları (Hackerrank)
-              iframe.event-video(src="https://www.youtube.com/embed/O6rh0W79EoQ" allowfullscreen width="400" height="300")
+              iframe.event-video(src="https://www.youtube.com/embed/O6rh0W79EoQ" frameborder="0" allowfullscreen width="400" height="300")
         .each-event-wrapper
           .each-event-title-wrapper
             span.each-event-title CF'17
@@ -268,4 +274,32 @@ block content
                 span 2016 Yarışma Soruları (PDF)
               a.event-link(href="https://www.hackerrank.com/codefest-2016" target="_blank")
                 span 2016 Yarışma Soruları (Hackerrank)
-                 
+      .media-wrapper
+        .media-inner-wrapper
+          if images
+            each image in images
+              .each-media-image
+                img(src=image alt="codefest organizasyon galeri")
+      .footer-wrapper
+        .footer-top-wrapper
+          .each-footer-top-column
+            span.footer-title Çıkmış Sorular
+            a.footer-text(href="/res/documents/2019" target="_blank") 2019 PDF
+            a.footer-text(href="/res/documents/2018" target="_blank") 2018 PDF
+            a.footer-text(href="/res/documents/2017" target="_blank") 2017 PDF
+            a.footer-text(href="/res/documents/2016" target="_blank") 2016 PDF
+          .each-footer-top-column
+            span.footer-title Hakkında
+            a.footer-text(href="https://drive.google.com/file/d/10tLNk4le8bMq-0aet3Rzft8ZUfFvRz7R/view?usp=sharing" target="_blank") 2021 Sponsorluk Dosyası
+            a.footer-text(href="https://youtube.com/watch?v=3GAubfJELyQ" target="_blank") 2019 Kapanış
+            a.footer-text(href="https://youtube.com/watch?v=O6rh0W79EoQ" target="_blank") 2018 Kapanış
+            a.footer-text(href="https://youtube.com/watch?v=vvRF0K3DbAE" target="_blank") 2017 Kapanış
+          .each-footer-top-column
+            span.footer-title İletişim
+            span.footer-text email:
+            span.footer-text codefest@my.uaa.k12.tr
+            span.footer-text twitter:
+            span.footer-text codefest@my.uaa.k12.tr
+        .footer-bottom-wrapper
+          a.footer-title(href="/") CodeFest'21
+          span.footer-text Copyright 2021 - Yunus Gürlek

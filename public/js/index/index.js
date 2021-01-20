@@ -1,11 +1,22 @@
-const smoothScroll = (scrollAmount, contentWrapper) => {
+const smoothScrollDown = (scrollAmount, contentWrapper) => {
   if (scrollAmount <= 0)
     return;
 
-  contentWrapper.scrollBy(0, 5);
+  contentWrapper.scrollBy(0, 50);
 
   setTimeout(() => {
-    smoothScroll(scrollAmount-5, contentWrapper);
+    smoothScrollDown(scrollAmount-50, contentWrapper);
+  }, 0.001);
+}
+
+const smoothScrollUp = (scrollAmount, contentWrapper) => {
+  if (scrollAmount <= 0)
+    return;
+
+  contentWrapper.scrollBy(0, -50);
+
+  setTimeout(() => {
+    smoothScrollUp(scrollAmount-50, contentWrapper);
   }, 0.001);
 }
 
@@ -16,6 +27,14 @@ const calculateColorPercentage = (scrollAmount, maxScrollAmount) => {
 window.onload = () => {
   const allHeader = document.querySelector('.all-header-wrapper');
   const allContent = document.querySelector('.all-content-wrapper');
+
+  const windowHeight = window.innerHeight;
+  const startPageWrapper = document.querySelector('.start-page-wrapper');
+  const aboutUsPageWrapper = document.querySelector('.about-us-page-wrapper');
+  const infoOuterWrapper = document.querySelector('.info-outer-wrapper');
+  const formPageWrapper = document.querySelector('.form-page-wrapper');
+  const oldEventsWrapper = document.querySelector('.old-events-wrapper');
+  const mediaWrapper = document.querySelector('.media-wrapper');
 
   const nameInput = document.getElementById('name-input');
   const surnameInput = document.getElementById('surname-input');
@@ -34,20 +53,40 @@ window.onload = () => {
     } else {
       allHeader.style.backgroundColor = 'transparent';
     }
+    
+    document.querySelector('.each-all-header-button-selected').classList.remove('each-all-header-button-selected');
+    document.querySelector('.each-all-header-button-selected').classList.remove('each-all-header-button-selected');
+
+    if (allContent.scrollTop < startPageWrapper.offsetHeight - 70) {
+      document.querySelectorAll('.main-page-button')[0].classList.add('each-all-header-button-selected');
+      document.querySelectorAll('.main-page-button')[1].classList.add('each-all-header-button-selected');
+    } else if (allContent.scrollTop < startPageWrapper.offsetHeight + aboutUsPageWrapper.offsetHeight + infoOuterWrapper.offsetHeight - 70) {
+      document.querySelectorAll('.about-us-page-button')[0].classList.add('each-all-header-button-selected');
+      document.querySelectorAll('.about-us-page-button')[1].classList.add('each-all-header-button-selected');
+    } else if (allContent.scrollTop < startPageWrapper.offsetHeight + aboutUsPageWrapper.offsetHeight + infoOuterWrapper.offsetHeight + formPageWrapper.offsetHeight - 70) {
+      document.querySelectorAll('.current-codefest-button')[0].classList.add('each-all-header-button-selected'); 
+      document.querySelectorAll('.current-codefest-button')[1].classList.add('each-all-header-button-selected'); 
+    } else if (allContent.scrollTop < startPageWrapper.offsetHeight + aboutUsPageWrapper.offsetHeight + infoOuterWrapper.offsetHeight + formPageWrapper.offsetHeight + oldEventsWrapper.offsetHeight - 70) {
+      document.querySelectorAll('.old-events-button')[0].classList.add('each-all-header-button-selected');
+      document.querySelectorAll('.old-events-button')[1].classList.add('each-all-header-button-selected');
+    } else if (allContent.scrollTop < startPageWrapper.offsetHeight + aboutUsPageWrapper.offsetHeight + infoOuterWrapper.offsetHeight + formPageWrapper.offsetHeight + oldEventsWrapper.offsetHeight + mediaWrapper.offsetHeight - 70) {
+      document.querySelectorAll('.images-button')[0].classList.add('each-all-header-button-selected'); 
+      document.querySelectorAll('.images-button')[1].classList.add('each-all-header-button-selected'); 
+    }
   }
 
   document.addEventListener('click', event => {
-    if (event.target.classList.contains('start-page-button') || (event.target.parentNode && event.target.parentNode.classList.contains('start-page-button')))
-      smoothScroll(window.innerHeight - 70, allContent);
-
-    if (event.target.classList.contains('all-header-aboutus-button'))
-      document.querySelector('.aboutus-page-wrapper').scrollIntoView(false);
-
-    if (event.target.classList.contains('all-header-awards-button'))
-      document.querySelector('.awards-page-wrapper').scrollIntoView(false);
-
-    if (event.target.classList.contains('all-header-contact-button'))
-      document.querySelector('.form-page-wrapper').scrollIntoView(false);
+    if (event.target.classList.contains('main-page-button')) {
+      allContent.scrollTo(0, 0);
+    } else if (event.target.classList.contains('about-us-page-button')) {
+      allContent.scrollTo(0, startPageWrapper.offsetHeight - 70);
+    } else if (event.target.classList.contains('current-codefest-button')) {
+      allContent.scrollTo(0, startPageWrapper.offsetHeight + aboutUsPageWrapper.offsetHeight + infoOuterWrapper.offsetHeight - 70);
+    } else if (event.target.classList.contains('old-events-button')) {
+      allContent.scrollTo(0, startPageWrapper.offsetHeight + aboutUsPageWrapper.offsetHeight + infoOuterWrapper.offsetHeight + formPageWrapper.offsetHeight - 70);
+    } else if (event.target.classList.contains('images-button')) {
+      allContent.scrollTo(0, startPageWrapper.offsetHeight + aboutUsPageWrapper.offsetHeight + infoOuterWrapper.offsetHeight + formPageWrapper.offsetHeight + oldEventsWrapper.offsetHeight - 70);
+    }
 
     if (event.target.classList.contains('form-send-button') || event.target.parentNode.classList.contains('form-send-button')) {
       generalErrorSpan.style.display = 'none';
