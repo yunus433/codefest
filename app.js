@@ -3,7 +3,6 @@ const http = require('http');
 const path = require('path');
 const dotenv = require('dotenv');
 const favicon = require('serve-favicon');
-const helmet = require('helmet');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const expressSession = require('express-session');
@@ -38,7 +37,6 @@ const session = expressSession({
 });
 
 app.use(session);
-app.use(helmet());
 
 app.use('/', indexRouteController);
 

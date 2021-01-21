@@ -1,5 +1,9 @@
 extends ./../partials/head
 block content
+  .full-size-image-wrapper
+    i.fas.fa-chevron-left.full-size-image-go-left-button.not-allowed-button
+    img(alt="codefest uaa galeri")
+    i.fas.fa-chevron-right.full-size-image-go-right-button
   .background-wrapper
     img(src="/res/images/dashboard_image.png" alt="codefest")
   .all-wrapper
@@ -88,6 +92,27 @@ block content
               i.fas.fa-code
               span.numbers-title 45+
               span.numbers-subtitle Soru
+          .numbers-inner-wrapper-responsive
+            .numbers-inner-wrapper-each-line
+              .numbers-each-wrapper
+                i.fas.fa-users
+                span.numbers-title 600+
+                span.numbers-subtitle Katılımcı
+              .numbers-each-border
+              .numbers-each-wrapper
+                i.fas.fa-tasks
+                span.numbers-title 30+
+                span.numbers-subtitle Ekip Üyesi
+            .numbers-inner-wrapper-each-line
+              .numbers-each-wrapper
+                i.fas.fa-laptop-code
+                span.numbers-title 40+
+                span.numbers-subtitle Çalıştay
+              .numbers-each-border
+              .numbers-each-wrapper
+                i.fas.fa-code
+                span.numbers-title 45+
+                span.numbers-subtitle Soru
       .form-page-wrapper
         .form-left-wrapper
           span.form-title CodeFest 2021
@@ -96,12 +121,12 @@ block content
           span.form-subtitle Gelişmelerden haberdar olmak için İletişim Formu'nun doldurmayı unutmayın!
         .form-right-wrapper
           .each-input-line
-            input.each-input#name-input(type="text" placeholder="Adınız" autocomplete="none" style="margin-right: 15px")
-            input.each-input#surname-input(type="text" placeholder="Soyadınız" autocomplete="none" style="margin-left: 15px")
+            input.each-input#name-input(type="text" placeholder="Adınız" autocomplete="none" style="margin-left: 0px")
+            input.each-input#surname-input(type="text" placeholder="Soyadınız" autocomplete="none" style="margin-right: 0px")
           .each-input-line
-            input.each-input#email-input(type="text" placeholder="E-Posta Adresi" autocomplete="none" style="margin-right: 15px")
-            input.each-input#phone-input(type="text" placeholder="Telefon Numarası" autocomplete="none" style="margin-left: 15px")
-          textarea.each-input#details-input(type="text" rows="5" placeholder="Detay (Opsiyonel)" autocomplete="none")
+            input.each-input#email-input(type="text" placeholder="E-Posta Adresi" autocomplete="none" style="margin-left: 0px")
+            input.each-input#phone-input(type="text" placeholder="Telefon Numarası" autocomplete="none" style="margin-right: 0px")
+          textarea.each-input#details-input(type="text" rows="5" placeholder="Detay (Opsiyonel)" autocomplete="none" style="margin: 0px")
           .form-send-line
             .form-send-button
               span Gönder
@@ -217,7 +242,7 @@ block content
                 span 2018 Yarışma Soruları (PDF)
               a.event-link(href="https://www.hackerrank.com/akaakeeo" target="_blank")
                 span 2018 Yarışma Soruları (Hackerrank)
-              iframe.event-video(src="https://www.youtube.com/embed/O6rh0W79EoQ" frameborder="0" allowfullscreen width="400" height="300")
+              iframe.event-video(src="https://www.youtube.com/embed/O6rh0W79EoQ" loading="lazy" frameborder="0" allowfullscreen width="400" height="300")
         .each-event-wrapper
           .each-event-title-wrapper
             span.each-event-title CF'17
@@ -248,7 +273,7 @@ block content
                 span 2017 Yarışma Soruları (PDF)
               a.event-link(href="https://www.hackerrank.com/01189998819991197253" target="_blank")
                 span 2017 Yarışma Soruları (Hackerrank)
-              iframe.event-video(frameborder="0" allowfullscreen src="https://www.youtube.com/embed/vvRF0K3DbAE" width="400" height="300")
+              iframe.event-video(frameborder="0" allowfullscreen src="https://www.youtube.com/embed/vvRF0K3DbAE" loading="lazy" width="400" height="300")
         .each-event-wrapper
           .each-event-title-wrapper
             span.each-event-title CF'16
@@ -272,14 +297,18 @@ block content
               span.event-text Çıkmış Sorular:
               a.event-link(href="/res/documents/2016.pdf" target="_blank")
                 span 2016 Yarışma Soruları (PDF)
-              a.event-link(href="https://www.hackerrank.com/codefest-2016" target="_blank")
+              a.event-link(href="https://www.hackerrank.com/codefest-2016" loading="lazy" target="_blank")
                 span 2016 Yarışma Soruları (Hackerrank)
       .media-wrapper
-        .media-inner-wrapper
-          if images
-            each image in images
-              .each-media-image
-                img(src=image alt="codefest organizasyon galeri")
+        span.media-title Galeri:
+        .media-content-wrapper
+          i.fas.fa-chevron-left.images-go-left-button.not-allowed-button
+          .media-inner-wrapper
+            if images
+              each image in images
+                .each-media-image(id=image.original)
+                  img(src=image.small loading="lazy" alt="codefest uaa galeri")
+          i.fas.fa-chevron-right.images-go-right-button
       .footer-wrapper
         .footer-top-wrapper
           .each-footer-top-column
@@ -291,9 +320,9 @@ block content
           .each-footer-top-column
             span.footer-title Hakkında
             a.footer-text(href="https://drive.google.com/file/d/10tLNk4le8bMq-0aet3Rzft8ZUfFvRz7R/view?usp=sharing" target="_blank") 2021 Sponsorluk Dosyası
-            a.footer-text(href="https://youtube.com/watch?v=3GAubfJELyQ" target="_blank") 2019 Kapanış
-            a.footer-text(href="https://youtube.com/watch?v=O6rh0W79EoQ" target="_blank") 2018 Kapanış
-            a.footer-text(href="https://youtube.com/watch?v=vvRF0K3DbAE" target="_blank") 2017 Kapanış
+            a.footer-text(href="https://www.youtube.com/watch?v=3GAubfJELyQ" target="_blank") 2019 Kapanış
+            a.footer-text(href="https://www.youtube.com/watch?v=O6rh0W79EoQ" target="_blank") 2018 Kapanış
+            a.footer-text(href="https://www.youtube.com/watch?v=vvRF0K3DbAE" target="_blank") 2017 Kapanış
           .each-footer-top-column
             span.footer-title İletişim
             span.footer-text email:

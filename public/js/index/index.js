@@ -1,22 +1,22 @@
-const smoothScrollDown = (scrollAmount, contentWrapper) => {
+const smoothScrollLeft = (scrollAmount, contentWrapper) => {
   if (scrollAmount <= 0)
     return;
 
-  contentWrapper.scrollBy(0, 50);
+  contentWrapper.scrollBy(-10, 0);
 
   setTimeout(() => {
-    smoothScrollDown(scrollAmount-50, contentWrapper);
+    smoothScrollLeft(scrollAmount-10, contentWrapper);
   }, 0.001);
 }
 
-const smoothScrollUp = (scrollAmount, contentWrapper) => {
+const smoothScrollRight = (scrollAmount, contentWrapper) => {
   if (scrollAmount <= 0)
     return;
 
-  contentWrapper.scrollBy(0, -50);
+  contentWrapper.scrollBy(10, 0);
 
   setTimeout(() => {
-    smoothScrollUp(scrollAmount-50, contentWrapper);
+    smoothScrollRight(scrollAmount-10, contentWrapper);
   }, 0.001);
 }
 
@@ -28,13 +28,16 @@ window.onload = () => {
   const allHeader = document.querySelector('.all-header-wrapper');
   const allContent = document.querySelector('.all-content-wrapper');
 
-  const windowHeight = window.innerHeight;
   const startPageWrapper = document.querySelector('.start-page-wrapper');
   const aboutUsPageWrapper = document.querySelector('.about-us-page-wrapper');
   const infoOuterWrapper = document.querySelector('.info-outer-wrapper');
   const formPageWrapper = document.querySelector('.form-page-wrapper');
   const oldEventsWrapper = document.querySelector('.old-events-wrapper');
   const mediaWrapper = document.querySelector('.media-wrapper');
+
+  const fullSizeImageWrapper = document.querySelector('.full-size-image-wrapper');
+  const mediaInnerWrapper = document.querySelector('.media-inner-wrapper');
+  let clickedImage;
 
   const nameInput = document.getElementById('name-input');
   const surnameInput = document.getElementById('surname-input');
@@ -49,7 +52,7 @@ window.onload = () => {
 
   allContent.onscroll = () => {
     if (allContent.scrollTop >= 70) {
-      allHeader.style.backgroundColor = `rgba(0, 0, 20, ${calculateColorPercentage(allContent.scrollTop, window.innerHeight)})`;
+      allHeader.style.backgroundColor = `rgba(0, 0, 20, ${calculateColorPercentage(allContent.scrollTop + 70, window.innerHeight)})`;
     } else {
       allHeader.style.backgroundColor = 'transparent';
     }
@@ -75,6 +78,20 @@ window.onload = () => {
     }
   }
 
+  mediaInnerWrapper.onscroll = () => {
+    if (mediaInnerWrapper.scrollLeft > 0) {
+      mediaInnerWrapper.parentElement.childNodes[0].classList.remove('not-allowed-button');
+    } else {
+      mediaInnerWrapper.parentElement.childNodes[0].classList.add('not-allowed-button');
+    }
+
+    if (mediaInnerWrapper.scrollWidth - mediaInnerWrapper.offsetWidth - mediaInnerWrapper.scrollLeft > 0) {
+      mediaInnerWrapper.parentElement.childNodes[2].classList.remove('not-allowed-button');
+    } else {
+      mediaInnerWrapper.parentElement.childNodes[2].classList.add('not-allowed-button');
+    }
+  }
+
   document.addEventListener('click', event => {
     if (event.target.classList.contains('main-page-button')) {
       allContent.scrollTo(0, 0);
@@ -86,6 +103,78 @@ window.onload = () => {
       allContent.scrollTo(0, startPageWrapper.offsetHeight + aboutUsPageWrapper.offsetHeight + infoOuterWrapper.offsetHeight + formPageWrapper.offsetHeight - 70);
     } else if (event.target.classList.contains('images-button')) {
       allContent.scrollTo(0, startPageWrapper.offsetHeight + aboutUsPageWrapper.offsetHeight + infoOuterWrapper.offsetHeight + formPageWrapper.offsetHeight + oldEventsWrapper.offsetHeight - 70);
+    }
+
+    if (event.target.parentNode.classList.contains('each-media-image')) {
+      clickedImage = event.target.parentNode;
+      const src = clickedImage.id;
+      fullSizeImageWrapper.style.display = 'flex';
+      fullSizeImageWrapper.childNodes[1].src = src;
+
+      if (clickedImage.previousElementSibling) {
+        fullSizeImageWrapper.childNodes[0].classList.remove('not-allowed-button');
+      } else {
+        fullSizeImageWrapper.childNodes[0].classList.add('not-allowed-button');
+      }
+
+      if (clickedImage.nextElementSibling) {
+        fullSizeImageWrapper.childNodes[2].classList.remove('not-allowed-button');
+      } else {
+        fullSizeImageWrapper.childNodes[2].classList.add('not-allowed-button');
+      }
+    }
+
+    if (event.target.classList.contains('full-size-image-wrapper')) {
+      fullSizeImageWrapper.style.display = 'none';
+      fullSizeImageWrapper.childNodes[1].src = '';
+    }
+
+    if (event.target.classList.contains('full-size-image-go-left-button') && clickedImage.previousElementSibling) {
+      fullSizeImageWrapper.childNodes[1].src = '';
+      clickedImage = clickedImage.previousElementSibling;
+      const src = clickedImage.id;
+      fullSizeImageWrapper.style.display = 'flex';
+      fullSizeImageWrapper.childNodes[1].src = src;
+
+      if (clickedImage.previousElementSibling) {
+        fullSizeImageWrapper.childNodes[0].classList.remove('not-allowed-button');
+      } else {
+        fullSizeImageWrapper.childNodes[0].classList.add('not-allowed-button');
+      }
+
+      if (clickedImage.nextElementSibling) {
+        fullSizeImageWrapper.childNodes[2].classList.remove('not-allowed-button');
+      } else {
+        fullSizeImageWrapper.childNodes[2].classList.add('not-allowed-button');
+      }
+    }
+
+    if (event.target.classList.contains('full-size-image-go-right-button') && clickedImage.nextElementSibling) {
+      fullSizeImageWrapper.childNodes[1].src = '';
+      clickedImage = clickedImage.nextElementSibling;
+      const src = clickedImage.id;
+      fullSizeImageWrapper.style.display = 'flex';
+      fullSizeImageWrapper.childNodes[1].src = src;
+
+      if (clickedImage.previousElementSibling) {
+        fullSizeImageWrapper.childNodes[0].classList.remove('not-allowed-button');
+      } else {
+        fullSizeImageWrapper.childNodes[0].classList.add('not-allowed-button');
+      }
+
+      if (clickedImage.nextElementSibling) {
+        fullSizeImageWrapper.childNodes[2].classList.remove('not-allowed-button');
+      } else {
+        fullSizeImageWrapper.childNodes[2].classList.add('not-allowed-button');
+      }
+    }
+
+    if (event.target.classList.contains('images-go-left-button')) {
+      smoothScrollLeft(Math.min(mediaInnerWrapper.offsetWidth, mediaInnerWrapper.scrollLeft), mediaInnerWrapper);
+    }
+
+    if (event.target.classList.contains('images-go-right-button')) {
+      smoothScrollRight(Math.min(mediaInnerWrapper.offsetWidth, mediaInnerWrapper.scrollWidth - mediaInnerWrapper.offsetWidth - mediaInnerWrapper.scrollLeft), mediaInnerWrapper);
     }
 
     if (event.target.classList.contains('form-send-button') || event.target.parentNode.classList.contains('form-send-button')) {
