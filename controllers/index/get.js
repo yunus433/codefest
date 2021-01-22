@@ -1,7 +1,7 @@
 module.exports = (req, res) => {
   return res.render('index/index', {
     page: 'index/index',
-    title: 'Ana Sayfa',
+    title: 'Türkiye\'nin Ilk ve En Büyük Liseler Arası Kodlama Etkinliği',
     includes: {
       external: ['css', 'js', 'fontawesome']
     },
