@@ -5,7 +5,7 @@ block content
     img(alt="codefest uaa galeri")
     i.fas.fa-chevron-right.full-size-image-go-right-button
   .background-wrapper
-    img(src="/res/images/dashboard_image.png" alt="codefest")
+    img(loading="lazy" src="/res/images/dashboard_image.png" alt="codefest")
   .background-small-wrapper
     img(src="/res/images/dashboard_image_small.png" alt="codefest")
   .all-wrapper
@@ -128,7 +128,7 @@ block content
           .each-input-line
             input.each-input#email-input(type="text" placeholder="E-Posta Adresi" autocomplete="none" style="margin-left: 0px")
             input.each-input#phone-input(type="text" placeholder="Telefon Numarası" autocomplete="none" style="margin-right: 0px")
-          textarea.each-input#details-input(type="text" rows="5" placeholder="Detay (Opsiyonel)" autocomplete="none" style="margin: 0px")
+          textarea.each-input#details-input(type="text" rows="5" placeholder="Detay (Opsiyonel)" autocomplete="none" style="margin: 0px; width: 100%;")
           .form-send-line
             .form-send-button
               span Gönder
