@@ -43,7 +43,7 @@ ApplicationSchema.statics.createApplication = function (newApplicationData, call
   if (!validator.isEmail(newApplicationData.email))
     return callback('email_validation');
   
-  if (newApplicationData.phone && !validator.isMobilePhone(newApplicationData.phone))
+  if (newApplicationData.phone && !validator.isMobilePhone(newApplicationData.phone.split(' ').join('')))
     return callback('phone_validation');
 
   const Application = this;
@@ -52,7 +52,7 @@ ApplicationSchema.statics.createApplication = function (newApplicationData, call
     email: newApplicationData.email,
     name: newApplicationData.name,
     surname: newApplicationData.surname,
-    phone: newApplicationData.phone || null,
+    phone: newApplicationData.phone.split(' ').join('') || null,
     details: newApplicationData.details || null
   });
 
