@@ -2,6 +2,8 @@ const moment = require('moment-timezone');
 const mongoose = require('mongoose');
 const validator = require('validator');
 
+const getNewApplicationData = require('./functions/getNewApplicationData');
+
 const Schema = mongoose.Schema;
 
 const ApplicationSchema = new Schema({
@@ -10,59 +12,57 @@ const ApplicationSchema = new Schema({
     required: true,
     unique: true
   },
-  name: {
+  team_name: {
     type: String,
     required: true
   },
-  surname: {
+  competitors: {
+    type: Object,
+    required: true,
+    default: {
+      first: {
+        name: '',
+        school_name: '',
+        school_email: '',
+        phone: '',
+        class: ''
+      },
+      second: {
+        name: '',
+        school_name: '',
+        school_email: '',
+        phone: '',
+        class: ''
+      }
+    }
+  },
+  teacher_name: {
     type: String,
     required: true
   },
-  created_at_unix: {
-    type: Number,
-    default: (new Date()).getTime()
-  },
-  created_at: {
+  teacher_phone: {
     type: String,
-    default: moment().tz('Europe/Istanbul').format('DD[.]MM[.]YYYY[, ]HH[:]mm')
-  },
-  phone: {
-    type: String,
-    default: null
-  },
-  details: {
-    type: String,
-    default: null
+    required: true
   }
 });
 
 ApplicationSchema.statics.createApplication = function (newApplicationData, callback) {
-  if (!newApplicationData || !newApplicationData.email || !newApplicationData.name || !newApplicationData.surname)
-    return callback('bad_request');
-
-  if (!validator.isEmail(newApplicationData.email))
-    return callback('email_validation');
-  
-  if (newApplicationData.phone && !validator.isMobilePhone(newApplicationData.phone.split(' ').join('')))
-    return callback('phone_validation');
-
-  const Application = this;
-  
-  const newApplication = new Application({
-    email: newApplicationData.email,
-    name: newApplicationData.name,
-    surname: newApplicationData.surname,
-    phone: newApplicationData.phone.split(' ').join('') || null,
-    details: newApplicationData.details || null
-  });
-
-  newApplication.save((err, application) => {
-    if (err && err.code == 11000)
-      return callback('email_duplication');
+  getNewApplicationData(newApplicationData, (err, data) => {
     if (err)
-      return callback('unknown_error');
+      return callback(err);
 
-    return callback(null, application);
+    const Application = this;
+  
+    const newApplication = new Application(data);
+  
+    newApplication.save((err, application) => {
+      if (err && err.code == 11000)
+        return callback('email_duplication');
+      if (err)
+        return callback('unknown_error');
+  
+      return callback(null, application._id.toString());
+    });
   });
 };
 

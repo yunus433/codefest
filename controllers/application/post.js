@@ -1,7 +1,7 @@
-const Contact = require('../../models/contact/Contact');
+const Application = require('../../models/application/Application');
 
 module.exports = (req, res) => {
-  Contact.createContact(req.body, err => {
+  Application.createApplication(req.body, err => {
     if (err && (err == 'bad_request' || err == 'email_validation' || err == 'phone_validation'))
       return res.sendStatus(400);
 

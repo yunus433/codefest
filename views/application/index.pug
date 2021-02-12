@@ -1,0 +1,91 @@
+extends ./../partials/head
+block content
+  .all-wrapper
+    form.form-wrapper
+      span.form-title Yarışmacı Başvurusu
+      span.form-info 3-4 nisanda düzenlenecek CodeFest 2021'in yarışmacı kayıt formu aşağıdadır. Bu sene etkinliğimiz Covid-19 önlemleri nedeniyle çevrimiçi gerçekleştirilecektir. 
+      span.form-info Yarışmacı takımlar en az 1, en çok 2 kişiden oluşacaktır. Her okuldan en fazla 3 tane takıma izin verilecektir. İlk kayıt yaptıran takımlar öncelikli olacaktır.
+      span.form-info Lütfen formu eksiksiz bir şekilde doldurunuz. E-posta adresiniz size ulaşabileceğimiz bir adres olmalıdır. Yazmış olduğunuz adres üzerinden etkinliğe katılımda bulunacaksınız.
+      span.form-info Çalıştay seçim formu kayıtlarımız tamamlandıktan sonra bu adrese yollanacaktır. Çalıştay formunu doldurmamanız halinde girmek istediğiniz çalıştayı seçmeniz mümkün olmayacaktır.
+      span.form-info(style="margin-left: auto") İlginiz için teşekkür ederiz,
+      span.form-info(style="margin-left: auto") ~CodeFest Ekibi
+      .form-space
+      span.input-title.required-sign E-Posta Adresi:
+      input.each-input#email-input(type="email" placeholder="E-Posta")
+      span.input-title.required-sign Takım Adı:
+      span.input-info Yarışmada kullanılacak takım adı
+      input.each-input#team-name-input(type="text" placeholder="Takım Adı")
+      span.input-title.required-sign Birinci Yarışmacının Adı Soyadı:
+      input.each-input#competitor-first-name-input(type="text" placeholder="Ad Soyad")
+      span.input-title.required-sign Birinci Yarışmacının Okul Adı:
+      input.each-input#competitor-first-school-input(type="text" placeholder="Okul Adı")
+      span.input-title.required-sign Birinci Yarışmacının Okul E-Posta Adresi:
+      span.input-info Yarışma hakkındaki bilgilendirmeler mail adresi üzerinden yapılacaktır.
+      input.each-input#competitor-first-email-input(type="email" placeholder="E-Posta")
+      span.input-title.required-sign Birinci Yarışmacının Telefon Numarası:
+      span.input-info Kişinin açık rızası olmak kaydıyla
+      input.each-input#competitor-first-phone-input(type="phone" placeholder="Telefon Numarası")
+      span.input-title.required-sign Birinci Yarışmacının Sınıf Seviyesi:
+      .selected-input-wrapper
+        input.display-none#competitor-first-class-input(type="text")
+        label.each-selected-input
+          .selected-input-icon
+            div
+          span.selected-input-value Hazırlık
+        label.each-selected-input
+          .selected-input-icon
+            div
+          span.selected-input-value 9. Sınıf
+        label.each-selected-input
+          .selected-input-icon
+            div
+          span.selected-input-value 10. Sınıf
+        label.each-selected-input
+          .selected-input-icon
+            div
+          span.selected-input-value 11. Sınıf
+        label.each-selected-input
+          .selected-input-icon
+            div
+          span.selected-input-value 12. Sınıf
+      span.input-title.required-sign İkinci Yarışmacının Adı Soyadı:
+      input.each-input#competitor-second-name-input(type="text" placeholder="Ad Soyad")
+      span.input-title.required-sign İkinci Yarışmacının Okul Adı:
+      input.each-input#competitor-second-school-input(type="text" placeholder="Okul Adı")
+      span.input-title.required-sign İkinci Yarışmacının Okul E-Posta Adresi:
+      span.input-info Yarışma hakkındaki bilgilendirmeler mail adresi üzerinden yapılacaktır.
+      input.each-input#competitor-second-email-input(type="email" placeholder="E-Posta")
+      span.input-title.required-sign İkinci Yarışmacının Telefon Numarası:
+      span.input-info Kişinin açık rızası olmak kaydıyla
+      input.each-input#competitor-second-phone-input(type="phone" placeholder="Telefon Numarası")
+      span.input-title.required-sign İkinci Yarışmacının Sınıf Seviyesi:
+      .selected-input-wrapper
+        input.display-none#competitor-second-class-input(type="text")
+        label.each-selected-input
+          .selected-input-icon
+            div
+          span.selected-input-value Hazırlık
+        label.each-selected-input
+          .selected-input-icon
+            div
+          span.selected-input-value 9. Sınıf
+        label.each-selected-input
+          .selected-input-icon
+            div
+          span.selected-input-value 10. Sınıf
+        label.each-selected-input
+          .selected-input-icon
+            div
+          span.selected-input-value 11. Sınıf
+        label.each-selected-input
+          .selected-input-icon
+            div
+          span.selected-input-value 12. Sınıf
+      span.input-title.required-sign Görevli Öğretmenin İsmi
+      span.input-info Takımlardan sorumlu bir öğretmen belirtilmesi gerekmektedir. Birden fazla takım, sorumlu öğretmen olarak aynı kişiyi gösterebilirler.
+      input.each-input#teacher-name-input(type="phone" placeholder="Ad Soyad")
+      span.input-title.required-sign Görevli Öğretmenin Telefon Numarası
+      span.input-info Kişinin açık rızası olmak kaydıyla
+      input.each-input#teacher-phone-input(type="phone" placeholder="Telefon Numarası")
+      button.send-form-button Gönder
+      span.form-error
