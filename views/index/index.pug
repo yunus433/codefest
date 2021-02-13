@@ -15,14 +15,14 @@ block content
           img(src="/res/images/header_logo.png" alt="codefest")
         .all-header-buttons-wrapper
           span.each-all-header-button.each-all-header-button-selected.main-page-button Ana Sayfa
-          span.each-all-header-button.about-us-page-button Hakkında
           span.each-all-header-button.current-codefest-button CodeFest'21
+          span.each-all-header-button.about-us-page-button Hakkında
           span.each-all-header-button.old-events-button Geçmiş Etkinlikler
           span.each-all-header-button.images-button Galeri
         .all-header-responsive-buttons-wrapper
           i.each-all-header-button.each-all-header-button-selected.main-page-button.fas.fa-home
-          i.each-all-header-button.about-us-page-button.fas.fa-info-circle
           i.each-all-header-button.current-codefest-button CF'21
+          i.each-all-header-button.about-us-page-button.fas.fa-info-circle
           i.each-all-header-button.old-events-button.fas.fa-clock
           i.each-all-header-button.images-button.fas.fa-images
     .all-content-wrapper
@@ -38,6 +38,79 @@ block content
             span Nisan 3-4
           .start-page-right-date
             span ONLINE
+      .current-contest-wrapper
+        .form-page-wrapper
+          .form-left-wrapper
+            span.form-title CodeFest 2021
+            .form-border
+            span.form-subtitle Bu yıl altıncısı düzenlenecek olan liselerarası ilk ve tek kodlama etkinliği olan CodeFest, 3-4 Nisan 2021  tarihleri arasında çevrimiçi olarak gerçekleştirilecek. Geçen senelerde olduğu gibi bu sene de ilk gün çalıştaylar ve ek yarışma, ikinci gün ise ana yarışma olacak.
+            span.form-subtitle Gelişmelerden haberdar olmak için İletişim Formu'nun doldurmayı unutmayın!
+          .form-right-wrapper
+            .each-input-line
+              input.each-input#name-input(type="text" placeholder="Adınız" autocomplete="none" style="margin-left: 0px")
+              input.each-input#surname-input(type="text" placeholder="Soyadınız" autocomplete="none" style="margin-right: 0px")
+            .each-input-line
+              input.each-input#email-input(type="text" placeholder="E-Posta Adresi" autocomplete="none" style="margin-left: 0px")
+              input.each-input#phone-input(type="text" placeholder="Telefon Numarası" autocomplete="none" style="margin-right: 0px")
+            textarea.each-input#details-input(type="text" rows="5" placeholder="Detay (Opsiyonel)" autocomplete="none" style="margin: 0px; width: 100%;")
+            .form-send-line
+              .form-send-button
+                span Gönder
+              span.form-error-message#general-error-span Bir hata oluştu, lütfen daha sonra tekrar deneyin.
+              span.form-error-message#already-registered-error-span Bu e-posta adresi ile zaten bir kayıt alınmış.
+              span.form-error-message#missing-information-error-span Lütfen gerekli tüm bilgileri doldurun.
+              span.form-error-message#finished-span Kaydınız alındı, ekibimiz en kısa zamanda size ulaşacak. Teşekkürler.
+        .contest-schedule-wrapper
+          span.schedule-title Yarışma Programı
+          .contest-schedule-inner-wrapper
+            .contest-day-one-wrapper
+              span.contest-schedule-title 3 Nisan 2021
+              span.contest-schedule-subtitle Cumartesi
+              .contest-schedule-point
+                span.contest-schedule-hour 9:00-10:30
+                span.contest-schedule-event Çalıştaylar (1. Seans)
+              .contest-schedule-point
+                span.contest-schedule-hour 10:30-10:50
+                span.contest-schedule-event Ara
+              .contest-schedule-point
+                span.contest-schedule-hour 10:50-12:20
+                span.contest-schedule-event Çalıştaylar (2. Seans)
+              .contest-schedule-point
+                span.contest-schedule-hour 12:20-12:30
+                span.contest-schedule-event Ara
+              .contest-schedule-point
+                span.contest-schedule-hour 12:30-12:45
+                span.contest-schedule-event Çalıştay Katılımcıları için Tören
+              .contest-schedule-point
+                span.contest-schedule-hour 12:45-13:15
+                span.contest-schedule-event Öğlen Arası
+              .contest-schedule-point
+                span.contest-schedule-hour 13:15-13:30
+                span.contest-schedule-event Ek Yarışmanın Açıklanması
+              .contest-schedule-point
+                span.contest-schedule-hour 13:30-13:45
+                span.contest-schedule-event Ara
+              .contest-schedule-point
+                span.contest-schedule-hour 13:45-17:45
+                span.contest-schedule-event Ek Yarışma
+            .contest-day-two-wrapper
+              span.contest-schedule-title 4 Nisan 2021
+              span.contest-schedule-subtitle Pazar
+              .contest-schedule-point
+                span.contest-schedule-event Açılış Töreni
+                span.contest-schedule-hour-right 09:30-9:50
+              .contest-schedule-point
+                span.contest-schedule-event Ara
+                span.contest-schedule-hour-right 09:50-10:00
+              .contest-schedule-point
+                span.contest-schedule-event Ana Yarışma
+                span.contest-schedule-hour-right 10:00-15:00
+              .contest-schedule-point
+                span.contest-schedule-event Ara
+                span.contest-schedule-hour-right 15:00-16:00
+              .contest-schedule-point
+                span.contest-schedule-event Kapanış Töreni
+                span.contest-schedule-hour-right 16:00-17:00
       .about-us-page-wrapper
         .about-us-left-wrapper
           img(src="/res/images/aboutus.png" alt="codefest about us")
@@ -55,7 +128,7 @@ block content
               span D
               span A
             .about-us-border-bottom
-              - for (let i = 0; i < 200; i++)
+             -for (let i = 0; i < 200; i++)
                 .each-about-us-border-point
             span.about-us-text CodeFest 2016 yılından beri Üsküdar Amerikan Lisesi öğrencileri tarafından düzenlenmekte. İki gün olan etkinlikte çalıştaylar ve yarışmalar yapılıyor, katılımcılar bir yandan kendilerini geliştirirken bir yandan da çeşitli ödüller kazanmak için yarışma imkanına sahip oluyor. CodeFest soruları, dünyadaki diğer bilgisayar olimpiyatlarına benzer formatta hazırlanıyor ve böylece uluslararası alanda ülkemizi temsil edecek öğrencilerimize de kendilerini deneme imkanı veriyor. Tüm Türkiye'den yüzlerce kişiyi ağırlayan CodeFest, bu sene online olarak düzenlenecek.
       .info-outer-wrapper
@@ -116,27 +189,6 @@ block content
                 i.fas.fa-code
                 span.numbers-title 45+
                 span.numbers-subtitle Soru
-      .form-page-wrapper
-        .form-left-wrapper
-          span.form-title CodeFest 2021
-          .form-border
-          span.form-subtitle Bu yıl altıncısı düzenlenecek olan liselerarası ilk ve tek kodlama etkinliği olan CodeFest, 3-4 Nisan 2021  tarihleri arasında çevrimiçi olarak gerçekleştirilecek. Geçen senelerde olduğu gibi bu sene de ilk gün çalıştaylar ve ek yarışma, ikinci gün ise ana yarışma olacak.
-          span.form-subtitle Gelişmelerden haberdar olmak için İletişim Formu'nun doldurmayı unutmayın!
-        .form-right-wrapper
-          .each-input-line
-            input.each-input#name-input(type="text" placeholder="Adınız" autocomplete="none" style="margin-left: 0px")
-            input.each-input#surname-input(type="text" placeholder="Soyadınız" autocomplete="none" style="margin-right: 0px")
-          .each-input-line
-            input.each-input#email-input(type="text" placeholder="E-Posta Adresi" autocomplete="none" style="margin-left: 0px")
-            input.each-input#phone-input(type="text" placeholder="Telefon Numarası" autocomplete="none" style="margin-right: 0px")
-          textarea.each-input#details-input(type="text" rows="5" placeholder="Detay (Opsiyonel)" autocomplete="none" style="margin: 0px; width: 100%;")
-          .form-send-line
-            .form-send-button
-              span Gönder
-            span.form-error-message#general-error-span Bir hata oluştu, lütfen daha sonra tekrar deneyin.
-            span.form-error-message#already-registered-error-span Bu e-posta adresi ile zaten bir kayıt alınmış.
-            span.form-error-message#missing-information-error-span Lütfen gerekli tüm bilgileri doldurun.
-            span.form-error-message#finished-span Kaydınız alındı, ekibimiz en kısa zamanda size ulaşacak. Teşekkürler.
       //- .workshops-wrapper
         .workshops-title-wrapper
           span.workshops-title Çalıştaylar

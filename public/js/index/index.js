@@ -31,7 +31,7 @@ window.onload = () => {
   const startPageWrapper = document.querySelector('.start-page-wrapper');
   const aboutUsPageWrapper = document.querySelector('.about-us-page-wrapper');
   const infoOuterWrapper = document.querySelector('.info-outer-wrapper');
-  const formPageWrapper = document.querySelector('.form-page-wrapper');
+  const currentContestWrapper = document.querySelector('.current-contest-wrapper');
   const oldEventsWrapper = document.querySelector('.old-events-wrapper');
   const mediaWrapper = document.querySelector('.media-wrapper');
 
@@ -63,16 +63,16 @@ window.onload = () => {
     if (allContent.scrollTop < startPageWrapper.offsetHeight - 70) {
       document.querySelectorAll('.main-page-button')[0].classList.add('each-all-header-button-selected');
       document.querySelectorAll('.main-page-button')[1].classList.add('each-all-header-button-selected');
-    } else if (allContent.scrollTop < startPageWrapper.offsetHeight + aboutUsPageWrapper.offsetHeight + infoOuterWrapper.offsetHeight - 70) {
-      document.querySelectorAll('.about-us-page-button')[0].classList.add('each-all-header-button-selected');
-      document.querySelectorAll('.about-us-page-button')[1].classList.add('each-all-header-button-selected');
-    } else if (allContent.scrollTop < startPageWrapper.offsetHeight + aboutUsPageWrapper.offsetHeight + infoOuterWrapper.offsetHeight + formPageWrapper.offsetHeight - 70) {
-      document.querySelectorAll('.current-codefest-button')[0].classList.add('each-all-header-button-selected'); 
-      document.querySelectorAll('.current-codefest-button')[1].classList.add('each-all-header-button-selected'); 
-    } else if (allContent.scrollTop < startPageWrapper.offsetHeight + aboutUsPageWrapper.offsetHeight + infoOuterWrapper.offsetHeight + formPageWrapper.offsetHeight + oldEventsWrapper.offsetHeight - 70) {
+    } else if (allContent.scrollTop < startPageWrapper.offsetHeight + currentContestWrapper.offsetHeight - 70) {
+      document.querySelectorAll('.current-codefest-button')[0].classList.add('each-all-header-button-selected');
+      document.querySelectorAll('.current-codefest-button')[1].classList.add('each-all-header-button-selected');
+    } else if (allContent.scrollTop < startPageWrapper.offsetHeight + currentContestWrapper.offsetHeight + aboutUsPageWrapper.offsetHeight + infoOuterWrapper.offsetHeight - 70) {
+      document.querySelectorAll('.about-us-page-button')[0].classList.add('each-all-header-button-selected'); 
+      document.querySelectorAll('.about-us-page-button')[1].classList.add('each-all-header-button-selected'); 
+    } else if (allContent.scrollTop < startPageWrapper.offsetHeight + currentContestWrapper.offsetHeight + aboutUsPageWrapper.offsetHeight + infoOuterWrapper.offsetHeight + oldEventsWrapper.offsetHeight - 70) {
       document.querySelectorAll('.old-events-button')[0].classList.add('each-all-header-button-selected');
       document.querySelectorAll('.old-events-button')[1].classList.add('each-all-header-button-selected');
-    } else if (allContent.scrollTop < startPageWrapper.offsetHeight + aboutUsPageWrapper.offsetHeight + infoOuterWrapper.offsetHeight + formPageWrapper.offsetHeight + oldEventsWrapper.offsetHeight + mediaWrapper.offsetHeight - 70) {
+    } else if (allContent.scrollTop < startPageWrapper.offsetHeight + currentContestWrapper.offsetHeight + aboutUsPageWrapper.offsetHeight + infoOuterWrapper.offsetHeight + oldEventsWrapper.offsetHeight + mediaWrapper.offsetHeight - 70) {
       document.querySelectorAll('.images-button')[0].classList.add('each-all-header-button-selected'); 
       document.querySelectorAll('.images-button')[1].classList.add('each-all-header-button-selected'); 
     }
@@ -95,14 +95,14 @@ window.onload = () => {
   document.addEventListener('click', event => {
     if (event.target.classList.contains('main-page-button')) {
       allContent.scrollTo(0, 0);
-    } else if (event.target.classList.contains('about-us-page-button')) {
-      allContent.scrollTo(0, startPageWrapper.offsetHeight - 70);
     } else if (event.target.classList.contains('current-codefest-button')) {
-      allContent.scrollTo(0, startPageWrapper.offsetHeight + aboutUsPageWrapper.offsetHeight + infoOuterWrapper.offsetHeight - 70);
-    } else if (event.target.classList.contains('old-events-button')) {
-      allContent.scrollTo(0, startPageWrapper.offsetHeight + aboutUsPageWrapper.offsetHeight + infoOuterWrapper.offsetHeight + formPageWrapper.offsetHeight - 70);
+      allContent.scrollTo(0, startPageWrapper.offsetHeight - 70);
+    } else if (event.target.classList.contains('about-us-page-button')) {
+      allContent.scrollTo(0, startPageWrapper.offsetHeight + currentContestWrapper.offsetHeight - 70);
+    }  else if (event.target.classList.contains('old-events-button')) {
+      allContent.scrollTo(0, startPageWrapper.offsetHeight + currentContestWrapper.offsetHeight + aboutUsPageWrapper.offsetHeight + infoOuterWrapper.offsetHeight - 70);
     } else if (event.target.classList.contains('images-button')) {
-      allContent.scrollTo(0, startPageWrapper.offsetHeight + aboutUsPageWrapper.offsetHeight + infoOuterWrapper.offsetHeight + formPageWrapper.offsetHeight + oldEventsWrapper.offsetHeight - 70);
+      allContent.scrollTo(0, startPageWrapper.offsetHeight + currentContestWrapper.offsetHeight +  aboutUsPageWrapper.offsetHeight + infoOuterWrapper.offsetHeight + oldEventsWrapper.offsetHeight - 70);
     }
 
     if (event.target.parentNode.classList.contains('each-media-image')) {
