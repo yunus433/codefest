@@ -16,7 +16,6 @@ const PORT = process.env.PORT || 3000;
 const mongoUri = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/codefest";
 
 const indexRouteController = require('./routes/indexRoute');
-const applicationRouteController = require('./routes/applicationRoute');
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
@@ -40,7 +39,6 @@ const session = expressSession({
 app.use(session);
 
 app.use('/', indexRouteController);
-app.use('/application', applicationRouteController);
 
 server.listen(PORT, () => {
   console.log(`Server is on port ${PORT}`);
