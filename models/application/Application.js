@@ -1,3 +1,4 @@
+const { find } = require('async');
 const moment = require('moment-timezone');
 const mongoose = require('mongoose');
 const validator = require('validator');
@@ -45,6 +46,24 @@ const ApplicationSchema = new Schema({
     required: true
   }
 });
+
+ApplicationSchema.statics.getApplications = function (data, callback) {
+  // Find and return applications with given data. Applications can be filtered by email and team_name, or an error if it exists
+
+  const Application = this;
+  const filters = {};
+
+  if (data.email && validator.isEmail(data.email))
+    filters.email = email;
+
+  if (data.team_name && typeof data.team_name == 'string')
+    filters.team_name = { $text: { $search: data.team_name } };
+
+  Application
+    .find(filters)
+    .then(applications => callback(null, applications))
+    .catch(err => callback('database_error'));
+}
 
 ApplicationSchema.statics.createApplication = function (newApplicationData, callback) {
   getNewApplicationData(newApplicationData, (err, data) => {
