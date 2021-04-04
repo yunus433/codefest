@@ -218,6 +218,14 @@ body {
   font-weight: 600;
   font-size: 16px;
 }
+.start-page-new-date-text {
+  font-size: 14px;
+  color: rgb(254, 254, 254);
+  font-weight: 400;
+  margin-top: 8px;
+  letter-spacing: 1px;
+  margin-left: auto;
+}
 
 .about-us-page-wrapper {
   width: 100vw;
