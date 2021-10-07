@@ -65,7 +65,7 @@ body {
   display: flex;
   flex-direction: column;
   z-index: 2;
-  background-color: rgba(0, 0, 20, 0.8);
+  background-color: rgba(0, 0, 20, 0.7);
 }
 
 .all-header-outer-wrapper {
