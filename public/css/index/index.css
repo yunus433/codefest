@@ -180,11 +180,12 @@ body {
   color: rgb(0, 0, 20);
   margin-right: auto;
   margin-bottom: 10px;
-  padding: 20px 25px;
-  border-radius: 10px;
+  padding: 23px 30px;
+  border-radius: 15px;
   text-decoration: none;
   font-weight: 700;
   font-size: 18px;
+  letter-spacing: 0.25px;
   cursor: pointer;
 }
 .apply-button:hover {
